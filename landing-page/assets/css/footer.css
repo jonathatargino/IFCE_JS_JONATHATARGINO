@@ -1,0 +1,39 @@
+#contact {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  margin-bottom: 100px;
+}
+
+.name-input-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(560px, 1fr));
+  gap: 36px;
+}
+
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+form button {
+  width: 250px;
+  height: 80px;
+  background-color: transparent;
+  color: var(--white-color);
+  font-size: var(--font-normal);
+  font-weight: 700;
+  border: 5px solid white;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: var(--white-color);
+  color: black;
+  font-size: var(--font-normal);
+  font-weight: 700;
+  border: 5px solid white;
+}
