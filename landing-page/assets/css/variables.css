@@ -3,8 +3,10 @@
   --white-color: #FFFFFF;
   --light-gray-color: #EEEEEE;
   --secondary-color: crimson;
+  --font-xlarge: 8rem;
   --font-large: 6rem;
   --font-medium: 4rem;
+  --font-rank: 3rem;
   --font-normal: 2.4rem;
   --font-small: 1.5rem;
 }

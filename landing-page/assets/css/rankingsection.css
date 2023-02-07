@@ -1,0 +1,40 @@
+.ranking {
+  display: flex;
+  gap: 36px;
+}
+
+.ranking-section-title, .ranking-section-title-rj {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 150px;
+}
+
+.ranking-section-title {
+  margin-bottom: 150px;
+}
+
+.ranking-section-title-rj {
+  margin-bottom: 80px;
+}
+
+.ranking-section-title h3 {
+  font-size: var(--font-normal);
+}
+
+.rank-header {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.rank-header h3 {
+  font-size: var(--font-xlarge);
+  font-weight: 700;
+  transform: rotate(15deg);
+}
+
+.rank-header span {
+  font-size: var(--font-rank);
+  font-weight: 700;
+}
