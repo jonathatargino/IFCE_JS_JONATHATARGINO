@@ -1,15 +1,10 @@
 // NAVBAR
 
-const menuButton = document.getElementById("menu-button");
-const navbar = document.getElementById("navbar")
+const menuButton = document.querySelector(".menu-button");
+const navbar = document.querySelector(".navbar")
 
 function handleMenuClick(){
-  if (navbar.style.transform == "translateX(0%)"){
-    navbar.style.transform = "translateX(100%)"
-  } else {
-    navbar.style.transform = "translateX(0%)";
-    console.log(navbar.style.transform)
-  }; 
+  navbar.classList.toggle('navbar-closed')
 }
 
 menuButton.addEventListener("click", () => {
@@ -17,7 +12,7 @@ menuButton.addEventListener("click", () => {
 })
 
 window.addEventListener("resize", () => {
-  if (window.innerWidth > 768){
-    navbar.style.transform = "translateX(0%)"
+  if (window.innerWidth > 768 && navbar.classList.contains('navbar-closed')){
+    navbar.classList.add('navbar-closed');
   }
 })
