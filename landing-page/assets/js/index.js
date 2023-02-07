@@ -1,10 +1,14 @@
 // NAVBAR
-
-const menuButton = document.querySelector(".menu-button");
 const navbar = document.querySelector(".navbar")
+const menuButton = document.querySelector(".menu-button");
+const menuIcon = document.querySelector(".menu-svg")
+const closeMenuIcon = document.querySelector(".close-menu-svg")
+
 
 function handleMenuClick(){
-  navbar.classList.toggle('navbar-closed')
+  navbar.classList.toggle('navbar-closed');
+  menuIcon.classList.toggle("invisible-icon");
+  closeMenuIcon.classList.toggle("invisible-icon");
 }
 
 menuButton.addEventListener("click", () => {
