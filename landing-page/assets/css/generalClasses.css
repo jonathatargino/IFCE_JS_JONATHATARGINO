@@ -6,3 +6,17 @@
 .bg-white {
   background-color: var(--white-color);
 }
+
+.section-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-text {
+  width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  text-align: center;
+}
