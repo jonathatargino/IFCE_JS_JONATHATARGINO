@@ -14,7 +14,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: var(--primary-color);
   width: 100vw;
-  font-size: var(--font-normal)
+  font-size: var(--font-normal);
 }
 
 h1, h2 {
@@ -29,12 +29,20 @@ a {
   color: inherit;
 }
 
-section {
-  height: 100vh;
+header {
+  min-height: 100vh;
+  padding: 140px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
 }
 
-header {
-  padding-top: 80px;
-  height: 100vh;
+header div h2 {
+  margin-bottom: 36px;
+}
+
+section, footer {
+  min-height: 100vh;
+  padding: 100px 80px
 }
 
