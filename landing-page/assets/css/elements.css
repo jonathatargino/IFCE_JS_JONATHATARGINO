@@ -47,3 +47,21 @@ section, footer {
   padding: 100px 80px
 }
 
+table, caption {
+  text-align: left;
+}
+
+th {
+  background-color: var(--light-gray-color);
+  font-weight: 700;
+  padding: 8px;
+}
+
+td {
+  border: 1px solid var(--light-gray-color);
+  padding: 0px 8px;
+}
+
+caption {
+  font-size: var(--font-small);
+}
