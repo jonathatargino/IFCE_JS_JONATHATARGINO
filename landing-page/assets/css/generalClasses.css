@@ -20,3 +20,10 @@
   gap: 36px;
   text-align: center;
 }
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin-bottom: 100px;
+}
