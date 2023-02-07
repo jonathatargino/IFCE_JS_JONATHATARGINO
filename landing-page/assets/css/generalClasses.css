@@ -1,0 +1,8 @@
+.bg-main {
+  background-image: url(../img/main-bg.svg);
+  color: white;
+}
+
+.bg-white {
+  background-color: var(--white-color);
+}
