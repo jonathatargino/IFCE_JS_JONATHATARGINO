@@ -98,3 +98,9 @@ legend {
   margin-bottom: 36px;
   font-style: italic;
 }
+
+@media (max-width: 1080px) {
+  header {
+    grid-template-columns: 1fr;
+  }
+}
