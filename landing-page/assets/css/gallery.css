@@ -1,6 +1,6 @@
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 36px;
 }
 
@@ -17,4 +17,10 @@
 
 .image-grid img:hover {
   transform: scale(1.2) rotate(5deg);
+}
+
+@media (max-width: 1024px){
+  .image-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
 }
