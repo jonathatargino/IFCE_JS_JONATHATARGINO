@@ -114,8 +114,16 @@ legend {
 }
 
 @media (max-width: 480px) {
-  input, textarea {
-    width: 70vw;
-    display: block;
+  header {
+    padding: 140px 20px;
+  }
+  section {
+    padding: 100px 20px;
+  }
+  h2 {
+    font-size: var(--font-medium);
+  }
+  footer {
+    padding: 100px 20px;
   }
 }
