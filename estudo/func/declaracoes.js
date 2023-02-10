@@ -31,3 +31,56 @@ const obj = {
     console.log("Estou falando...")
   }
 }
+
+// Parâmetros
+
+
+// As funções declaradas com function contém um objeto chamado arguments que conterá todos os argumentos recebidos durante uma execução da função.
+function funcao(){  
+  console.log(arguments)
+}
+
+funcao("Valor", 1, 2, 3, 4, 5);
+
+// O valor default de um parâmetro criado é undefined
+
+function funcao2(a){
+  // Output: undefined
+  console.log(a);
+}
+
+// Setando valor padrão de parâmetro caso não seja passo um na execução da função:
+
+function printaNumero(num = 0){
+  console.log(num);
+}
+
+// Output: 8
+printaNumero(8)
+
+// Output: 0
+printaNumero()
+
+
+// Desestruturação de objeto nos parâmetros
+function funcaoDesetruturaObj({nome, sobrenome, idade}){
+  console.log(nome, sobrenome, idade);
+}
+
+funcaoDesetruturaObj({nome: "Jonatha", sobrenome: "Targino", idade: 19})
+
+// Desestruturação de listas nos parâmetros
+function funcaoDesetruturaArray([nome, sobrenome, idade]){
+  console.log(nome, sobrenome, idade);
+}
+
+funcaoDesetruturaArray(["Jonatha", "Targino", 19])
+
+
+// REST OPERATOR : Recebe todos os parâmetros não declarados em uma variável Array;
+function somar(...numbers){
+  console.log(numbers);
+}
+
+// Output: [ 1, 2, 3, 4, 5 ];
+somar(1, 2, 3, 4, 5);a
