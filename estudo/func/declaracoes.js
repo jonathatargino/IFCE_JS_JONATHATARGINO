@@ -114,3 +114,14 @@ function criarMultiplicador(multiplicador){
 
 const duplica = criarMultiplicador(2)
 console.log(duplica(1))
+
+// Escopo léxico: A função conhece o local onde foi declarada. Se você chama uma variável dentro de uma função, ela vai procurar primeiramente dentro da própria função, depois no pai dela, até chegar no escopo global. Se a variavel não existir no escopo global.
+
+const nome = "Jonatha"
+
+// Será printado "Levy" na tela pois a função procurou primeiro em seu próprio escopo.
+function falaNome(){
+  const nome = "Levy"
+  console.log(nome)
+}
+
