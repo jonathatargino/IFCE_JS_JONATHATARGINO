@@ -84,3 +84,33 @@ function somar(...numbers){
 
 // Output: [ 1, 2, 3, 4, 5 ];
 somar(1, 2, 3, 4, 5);
+
+// Retorno da função (return)
+
+function soma(a, b){
+  return a + b;
+}
+
+// Os retornos podem ser capturados através de atribuição 
+
+// valorSoma vai receber o valor retornado por soma(2,5), que é 7.
+const valorSoma = soma(2,5);
+
+function falaFrase(comeco){
+  function falaResto(resto){
+    return comeco + ' ' + resto;
+  }
+  return falaResto;
+}
+
+const olaMundo = falaFrase('Olá')('Mundo');
+console.log(olaMundo);
+
+function criarMultiplicador(multiplicador){
+  return function(n){
+    return n * multiplicador;
+  }
+}
+
+const duplica = criarMultiplicador(2)
+console.log(duplica(1))
