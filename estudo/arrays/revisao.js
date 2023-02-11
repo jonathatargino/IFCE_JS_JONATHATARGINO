@@ -71,3 +71,22 @@ const val2 = 8;
 numeros2.splice(index, del, val1, val2);
 // Output: [ 1, 2, 7, 8, 5, 6 ]
 console.log(numeros2);
+
+// Concatenando Arrays -> Concatenar = unir
+
+a1 = [1,2,3];
+a2 = [4,5,6];
+// Não funciona pois transforma em uma string
+a3 = a1 + a2;
+// Output: 1,2,34,5,6
+console.log(a3);
+
+// Adiciona o array dentro dos argumentos ao array que está chamando o método.
+a4 = a1.concat(a2);
+// Output: [ 1, 2, 3, 4, 5, 6 ]
+console.log(a4)
+
+// Também é possivel adicionar todos os elementos de um array à outro através do spread;
+const a5 = [...a1, "Um", "Dois", ...a2];
+// Output: [1, 2, 3, 'Um', 'Dois', 4, 5, 6]
+console.log(a5) 
