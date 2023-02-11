@@ -51,3 +51,23 @@ console.log(nomeArray)
 const nomeString = nomeArray.join(' ')
 // Output: Jonatha de Oliveira Targino
 console.log(nomeString);
+
+// SPLICE -> Nesta função, você consegue deletar e injetar elementos no meio de um array 
+const numeros = [1, 2, 3, 4, 5, 6];
+const numeros2 = [...numeros]
+
+const index = 2
+const del = 2;
+
+// Vai remover 2 valores a partir do index 2.
+numeros.splice(index,del)
+// Output: [ 1, 2, 5, 6 ]
+console.log(numeros)
+
+const val1 = 7;
+const val2 = 8;
+
+// Vai remover os 2 valores a partir do index 2, e, depois, adicionará os outros valores passados pelos parâmetros.
+numeros2.splice(index, del, val1, val2);
+// Output: [ 1, 2, 7, 8, 5, 6 ]
+console.log(numeros2);
