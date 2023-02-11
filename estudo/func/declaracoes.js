@@ -138,4 +138,9 @@ function retornaFuncao(nome){
 const funcaoRetornada = retornaFuncao('João');
 
 
+// IIFE -> Immediately Invoked Function Expression (Função executada imediatamente)
+(function(nacionalidade) {
+  console.log(nacionalidade)
+})('BR');
 
+// Vantagens: Não precisa de uma palavra-chave para armazenar e executar.
