@@ -125,3 +125,17 @@ function falaNome(){
   console.log(nome)
 }
 
+// Closure é a combinação de uma função com as referências do ambiente léxico.
+
+function retornaFuncao(nome){
+  return function() {
+    return nome
+  }
+}
+
+
+// A função receberá o parametro nome através da referência do escopo léxico.
+const funcaoRetornada = retornaFuncao('João');
+
+
+
