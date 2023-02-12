@@ -85,3 +85,42 @@ p2.preco = 1000;
 p2.desconto(10)
 // Output: Produto { nome: 'meias', preco: 900 }
 console.log(p2)
+
+// HERANÇA -> Nos permite criar funções construtoras que "extendem" outras funções construtoras, ou seja, herdam o "molde" e podem ou não adicionar mais coisas nesse molde.
+// .call()
+
+// Produto -> Camiseta, Caneca
+
+function Produto2(nome, preco) {
+  this.nome = nome;
+  this.preco = preco;
+}
+
+Produto2.prototype.aumento = function(valor){
+  this.preco += valor
+}
+
+Produto2.prototype.desconto = function(valor){
+  this.preco -= valor
+}
+
+function Camiseta(nome, preco, cor){
+  Produto2.call(this, nome, preco);
+  this.cor = cor;
+}
+
+// Porém temos um problema: Camiseta, apesar de herdar as propriedades de Produto, não herda o prototype. Desta forma, torna-se necessário fazer:
+Camiseta.prototype = Object.create(Produto2.prototype)
+// Reatribuir o prototype faz com que se mude o construtor, então, consertaremos:
+Camiseta.prototype.constructor = Camiseta
+
+const camiseta = new Camiseta("Regata", 7.5, "vermelha")
+
+// Output: Camiseta { nome: 'Regata', preco: 7.5, cor: 'vermelha' }
+console.log(camiseta)
+
+// Note que as propriedades nome e preco vieram do construtor Produto, construtor tal que Camiseta herdou essas propriedades.
+
+camiseta.aumento(10)
+// Output: Camiseta { nome: 'Regata', preco: 17.5, cor: 'vermelha' }
+console.log(camiseta);
