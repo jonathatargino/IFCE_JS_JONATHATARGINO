@@ -18,38 +18,44 @@ total = 284
 Dessa forma, validamos os dígitos 5 e 2, tornando esse cpf válido.
  */
 
-const validaCpf = (cpf) => {
-  const cpfLimpo = cpf.replace('.', '').replace('.', '').replace('-', '');
-  const cpfSemUltimosDoisDigitos = cpfLimpo.slice(0, -2);
-  const cpfArray = cpfSemUltimosDoisDigitos.split('');
-  let i = 11
-  const cpfArrayMultiplicado = cpfArray.map((num) => {
-    i--;
-    return num * i;
-  })
-
-  const total = cpfArrayMultiplicado.reduce((acumulador, valor) => {
-    return acumulador + valor;
-  }, 0)
-
-  const primeiroDigito = 11 - (total % 11)
-
-  const cpfSemUltimoDigito = cpfLimpo.slice(0, -1);
-  const segundoCpfArray = cpfSemUltimoDigito. split('')
-  let j = 12
-  const segundoCpfArrayMultiplicado = segundoCpfArray.map((num) => {
-    j--;
-    return num * j;
-  })
-
-  const segundoTotal = segundoCpfArrayMultiplicado.reduce((acumulador, valor) => {
-    return acumulador + valor;
-  }, 0)
-  const segundoDigito = 11 - (segundoTotal % 11);
-
-  const cpfPosValidacao = cpfSemUltimosDoisDigitos + primeiroDigito + segundoDigito
-
-  return cpfPosValidacao === cpfLimpo;
+function ValidaCPF(cpfEnviado){
+  Object.defineProperty(this, 'cpfLimpo', {
+    enumerable: true,
+    get: function() {
+      return cpfEnviado.replace(/\D+/g, '');
+    }
+  });
 }
 
-console.log(validaCpf("705.484.450-52"))
+ValidaCPF.prototype.valida = function() {
+  if (typeof this.cpfLimpo === 'undefined') return false;
+  if (this.cpfLimpo.length !== 11) return false;
+
+  const cpfParcial = this.cpfLimpo.slice(0,-2);
+  const digito1 = this.criaDigito(cpfParcial);
+
+  const digito2 = this.criaDigito(cpfParcial + digito1);
+  
+  const cpfCalculado = cpfParcial + digito1 + digito2;
+
+  return this.cpfLimpo === cpfCalculado ? true : false;
+}
+
+ValidaCPF.prototype.criaDigito = function(cpfParcial) {
+  const cpfArray = Array.from(cpfParcial);
+  let regressivo = cpfArray.length + 1
+  const total = cpfArray.reduce((ac, val) => {
+
+    ac += (Number(val) * regressivo);
+    regressivo--
+    return ac
+  }, 0)
+  
+  const digito = 11 - (total % 11);
+  if (digito > 9) return 0
+  return digito;
+}
+
+const cpf = new ValidaCPF('705.484.450-52');
+console.log(cpf.cpfLimpo)
+console.log(cpf.valida())
