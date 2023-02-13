@@ -24,3 +24,38 @@ esperaAi(1, 1000)
   .catch(e => console.log(e)); // Output: Bad Value
 
 console.log("Esta frase será exibida antes da promise");
+
+
+// Métodos Úteis para Promises:
+
+// Promise.all -> Resolve um array de promises simultaneamente, retornando um array com os retornos de cada promise na mesma ordem em que as promises foram colocadas no array.
+
+// Obs: se alguma promise de um array de promises tiver algum problema durante o .all ou .race, apenas será retornado o reject.
+const promises = [
+  esperaAi('Promise 1', 3000),
+  esperaAi('Promise 2', 500),
+  esperaAi('Promise 3', 1000),
+]
+
+Promise.all(promises).then((response) => console.log(response)) // Output: [ 'Promise 1', 'Promise 2', 'Promise 3' ]
+
+// Promise.race -> Resolve um array de promises e retorna o valor da primeira que terminar. Race = "Corrida".
+// Obs: O javascript não tem como para as promessas no race, então, ele retornará o valor da primeira que for resolvida e o resto continuará executando.
+
+Promise.race(promises).then((response) => console.log(response)); // Output: Promise 2
+
+// Promise.resolve -> resolve a promessa imediatamente | Promise.reject -> rejeita uma promessa imediatamente
+
+function baixaPagina(){
+  const emCache = true;
+
+  if(emCache) {
+    return Promise.resolve('Página em cache')
+  } else {
+    return Promise.reject('Página não armazenada')
+  }
+}
+
+baixaPagina()
+  .then(response => console.log(response))
+  .catch(e => console.log(e));
