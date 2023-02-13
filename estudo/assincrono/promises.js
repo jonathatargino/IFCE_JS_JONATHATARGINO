@@ -59,3 +59,23 @@ function baixaPagina(){
 baixaPagina()
   .then(response => console.log(response))
   .catch(e => console.log(e));
+
+
+// Async e Await
+
+// Async -> Tornamos uma função assíncrona, possibilitando que usemos Await em alguma promise dentro dela.
+// Await -> A promise entra na call stack e o código só continua quando ela der retorno. Await = "esperar".
+
+function naoEspera() {
+  esperaAi("não me esperou :(", 1000).then((response) => console.log(response))
+  console.log("console log após promise naoEspera")
+};
+
+// Neste caso, o segundo console log só será disparado após o retorno na promise pois espera é uma função assíncrona e a promise possui a palavra chave await.
+async function espera() {
+  await esperaAi("me esperou :)", 1000).then((response) => console.log(response))
+  console.log("console log após promise espera");
+}
+
+naoEspera();
+espera();
