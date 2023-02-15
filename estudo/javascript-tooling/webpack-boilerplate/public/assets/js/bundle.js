@@ -90,10 +90,49 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modulo1__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modulo1 */ "./src/modulo1.js");
+// Import trás dados de algum outro arquivo para que possamos utilizar-los em nosso programa.
+
+// as -> renomeia a variável que vai conter o dado importado.
 
 
+console.log(_modulo1__WEBPACK_IMPORTED_MODULE_0__["nome"], _modulo1__WEBPACK_IMPORTED_MODULE_0__["sobrenome"], _modulo1__WEBPACK_IMPORTED_MODULE_0__["soma"]); // Output: Jonatha Targino function soma(x,y)
+console.log(_modulo1__WEBPACK_IMPORTED_MODULE_0__["default"]); // Output: 5
+
+/***/ }),
+
+/***/ "./src/modulo1.js":
+/*!************************!*\
+  !*** ./src/modulo1.js ***!
+  \************************/
+/*! exports provided: idade, nome, sobrenome, soma, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "idade", function() { return idade; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "nome", function() { return nome; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sobrenome", function() { return sobrenome; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "soma", function() { return soma; });
+var nome = "Jonatha";
+var sobrenome = "Targino";
+// Obs: o export pode ser um objeto de valores ou pode ser adicionado antes da declaração de cada valor.
+var idade = 19;
+function soma(x, y) {
+  return x + y;
+}
+
+// Exporta variáveis ou funções para que outros arquivos possam importar, podendo usar o dado sem que ele tenha sido declarado no arquivo, pois a declaração dele está dentro do arquivo que o exportou.
+
+
+// Export default -> Vai ser o padrão exportado pelo módulo. Cada módulo só pode ter uma exportação padrão.
+var a = 5;
+/* harmony default export */ __webpack_exports__["default"] = (5);
 
 /***/ })
 
