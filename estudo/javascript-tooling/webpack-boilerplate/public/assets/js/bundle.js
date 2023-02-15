@@ -81,58 +81,35 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/main.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/***/ "./public/assets/css/style.css":
+/*!*************************************!*\
+  !*** ./public/assets/css/style.css ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/style-loader/dist/cjs.js):\nTypeError: this.getOptions is not a function\n    at Object.loader (/home/jonathatargino/Documentos/Projetos/IFCE_JS_JONATHATARGINO/estudo/javascript-tooling/webpack-boilerplate/node_modules/style-loader/dist/index.js:19:24)");
+
+/***/ }),
+
+/***/ "./src/main.js":
+/*!*********************!*\
+  !*** ./src/main.js ***!
+  \*********************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modulo1__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modulo1 */ "./src/modulo1.js");
-// Import trás dados de algum outro arquivo para que possamos utilizar-los em nosso programa.
+/* harmony import */ var _public_assets_css_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../public/assets/css/style.css */ "./public/assets/css/style.css");
+/* harmony import */ var _public_assets_css_style_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_public_assets_css_style_css__WEBPACK_IMPORTED_MODULE_0__);
+// Importação da estilização CSS (não precisa mais botar css diretamente nos imports do HTML)
 
-// as -> renomeia a variável que vai conter o dado importado.
-
-
-console.log(_modulo1__WEBPACK_IMPORTED_MODULE_0__["nome"], _modulo1__WEBPACK_IMPORTED_MODULE_0__["sobrenome"], _modulo1__WEBPACK_IMPORTED_MODULE_0__["soma"]); // Output: Jonatha Targino function soma(x,y)
-console.log(_modulo1__WEBPACK_IMPORTED_MODULE_0__["default"]); // Output: 5
-
-/***/ }),
-
-/***/ "./src/modulo1.js":
-/*!************************!*\
-  !*** ./src/modulo1.js ***!
-  \************************/
-/*! exports provided: idade, nome, sobrenome, soma, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "idade", function() { return idade; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "nome", function() { return nome; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sobrenome", function() { return sobrenome; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "soma", function() { return soma; });
-var nome = "Jonatha";
-var sobrenome = "Targino";
-// Obs: o export pode ser um objeto de valores ou pode ser adicionado antes da declaração de cada valor.
-var idade = 19;
-function soma(x, y) {
-  return x + y;
-}
-
-// Exporta variáveis ou funções para que outros arquivos possam importar, podendo usar o dado sem que ele tenha sido declarado no arquivo, pois a declaração dele está dentro do arquivo que o exportou.
-
-
-// Export default -> Vai ser o padrão exportado pelo módulo. Cada módulo só pode ter uma exportação padrão.
-var a = 5;
-/* harmony default export */ __webpack_exports__["default"] = (5);
 
 /***/ })
 
