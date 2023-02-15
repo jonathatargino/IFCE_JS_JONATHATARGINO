@@ -1,0 +1,1 @@
+//regenerator-runtime é o runtime que presta suporte as funções assincronas transpiladas. Ou seja, sem o runtime, você não consegue executar um programa que contém funções assincronas em alguns navegadores sem suporte.
