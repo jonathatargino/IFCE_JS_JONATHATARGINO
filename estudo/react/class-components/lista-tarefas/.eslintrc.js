@@ -22,5 +22,6 @@ module.exports = {
     'react/state-in-constructor': 0,
     'import/no-duplicates': 0,
     'class-methods-use-this': 0,
+    'react/forbid-prop-types': 0,
   },
 };
