@@ -10,10 +10,7 @@ import { FaEdit, FaWindowClose } from 'react-icons/fa';
 export default class Main extends Component {
   state = {
     novaTarefa: '',
-    tarefas: [
-      'Fazer café',
-      'Beber Água',
-    ],
+    tarefas: [],
   };
 
   handleFormSubmit = (e) => {
@@ -35,6 +32,20 @@ export default class Main extends Component {
     this.setState({ novaTarefa: e.target.value });
   };
 
+  handleEdit = (e, index) => {
+    console.log('Edit', index);
+  };
+
+  handleDelete = (e, index) => {
+    const { tarefas } = this.state;
+    const novasTarefas = [...tarefas];
+    novasTarefas.splice(index, 1);
+
+    this.setState({
+      tarefas: [...novasTarefas],
+    });
+  };
+
   render() {
     const { novaTarefa, tarefas } = this.state;
     return (
@@ -53,12 +64,18 @@ export default class Main extends Component {
         </form>
 
         <ul className="tarefas">
-          {tarefas.map((tarefa) => (
+          {tarefas.map((tarefa, index) => (
             <li key={tarefa}>
               {tarefa}
               <div>
-                <FaEdit className="edit" />
-                <FaWindowClose className="delete" />
+                <FaEdit
+                  onClick={(e) => this.handleEdit(e, index)}
+                  className="edit"
+                />
+                <FaWindowClose
+                  onClick={(e) => this.handleDelete(e, index)}
+                  className="delete"
+                />
               </div>
             </li>
           ))}
