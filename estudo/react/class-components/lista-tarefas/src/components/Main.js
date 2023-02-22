@@ -16,6 +16,21 @@ export default class Main extends Component {
     ],
   };
 
+  handleFormSubmit = (e) => {
+    e.preventDefault();
+    const { tarefas } = this.state;
+    let { novaTarefa } = this.state;
+    novaTarefa = novaTarefa.trim();
+
+    if (tarefas.indexOf(novaTarefa) !== -1) return;
+
+    const novasTarefas = [...tarefas];
+
+    this.setState({
+      tarefas: [...novasTarefas, novaTarefa],
+    });
+  };
+
   handleInputChange = (e) => {
     this.setState({ novaTarefa: e.target.value });
   };
@@ -26,7 +41,7 @@ export default class Main extends Component {
       <div className="main">
         <h1>Liste de tarefas</h1>
 
-        <form className="form" action="#">
+        <form onSubmit={this.handleFormSubmit} className="form" action="#">
           <input
             onChange={this.handleInputChange}
             value={novaTarefa}
