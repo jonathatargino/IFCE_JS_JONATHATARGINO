@@ -20,5 +20,6 @@ module.exports = {
     'react/jsx-filename-extension': 0,
     'react/prefer-stateless-function': 0,
     'react/state-in-constructor': 0,
+    'import/no-duplicates': 0,
   },
 };
