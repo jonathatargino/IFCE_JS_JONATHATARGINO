@@ -1,1 +1,2 @@
-TypeScript é um superset para o Javascript, novos recursos como tipagem estática. O código TypeScript é compilado para JavaScript puro. 
+TypeScript é um superset para o Javascript, novos recursos como tipagem estática. O código TypeScript é compilado para JavaScript puro.
+O TypeScript possui dois modes: Script mode e Module mode. Script mode faz com que o TypeScript considere um arquivo sem exportações como um arquivo com escopo global, como se todos os arquivos tivessem o mesmo escopo. Ou seja, em arquivos sem exportações, variáveis ou funções com nomes iguais serão dadas como já definidas. Por outro lado, o Module mode é o TypeScript modularizado, com escopos separados.
