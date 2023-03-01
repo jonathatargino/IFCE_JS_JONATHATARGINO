@@ -31,4 +31,9 @@ const soma2: (x: number, y: number) => number = (x, y) => x + y
 // result terá tipagem inferida de number pois a function soma tem retorno do tipo number.
 const result = soma(2,2)
 
+// Tipo any é um tipo que pode ser "qualquer coisa" e tem que ser evitado. Uma variável ser do tipo any significa que o TypeScript não conseguiu inferir nenhum tipo para ela, sendo necessário um type annotation
+function showMessage(msg){
+  return msg
+}
+
 
