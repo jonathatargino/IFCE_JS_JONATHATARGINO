@@ -36,4 +36,9 @@ function showMessage(msg){
   return msg
 }
 
+// Tipo void é o tipo de funções sem retorno.
+function semRetorno(): void {
+  console.log("sem retorno");
+}
+
 
