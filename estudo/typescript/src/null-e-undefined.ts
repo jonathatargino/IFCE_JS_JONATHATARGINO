@@ -21,3 +21,8 @@ export function squareOf(x: any){
 }
 
 const square = squareOf(2) // square: number | null
+
+// never -> função que nunca vai retornar nunca, geralmente lança um erro ou travar sua aplicação.
+function criaErro(): never {
+  throw new Error('Erro qualquer')
+}
