@@ -5,7 +5,7 @@ const objetoA = {
 
 objetoA.chaveA = "Outro valor";
 // Não podemos criar um nova nova propriedade para um objeto (sem index signature).
-objetoA.chaveC = "Nova Chave";
+// objetoA.chaveC = "Nova Chave";
 
 // Tipando um objeto
 const objetoB: {
@@ -19,3 +19,5 @@ const objetoB: {
 };
 
 objetoB.chaveD = "Chave D";
+
+export default {};

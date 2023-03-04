@@ -20,3 +20,5 @@ enum OutrasCores {
 console.log(OutrasCores[0]); // undefined
 console.log(OutrasCores[10]); // VERMELHO
 console.log(OutrasCores.ROXO); // ROXO
+
+export default {};

@@ -9,3 +9,5 @@ function addOrConcat(a: number | string, b: number | string): number | string {
 console.log(addOrConcat(1, 2));
 console.log(addOrConcat("1", "2"));
 console.log(addOrConcat(1, "2"));
+
+export default {};

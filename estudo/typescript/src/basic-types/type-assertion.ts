@@ -6,3 +6,5 @@ const body2 = document.querySelector("body")!; // HTMLBodyElement
 
 // Type assertion
 const body3 = document.querySelector("body") as HTMLBodyElement;
+
+export default {};

@@ -26,3 +26,5 @@ function escolhaCor(cor: "Vermelho" | "Amarelo" | "Azul") {
 
 // escolhaCor("Verde") // Argument of type '"Verde"' is not assignable to parameter of type '"Vermelho" | "Amarelo" | "Azul"
 escolhaCor("Vermelho"); // O autocomplete já mostra as opções viáveis
+
+export default {};

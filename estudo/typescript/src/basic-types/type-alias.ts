@@ -17,3 +17,5 @@ const minhaPessoa: Pessoa = {
   salario: 200_000,
   corPreferida: "Vermelho",
 };
+
+export default {};

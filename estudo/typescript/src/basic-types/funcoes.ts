@@ -14,3 +14,5 @@ function mapStrings(array: string[], callback: MapStringsCallback): string[] {
 const abc = ["a", "b", "c"];
 const uppercaseAbc = mapStrings(abc, (item) => item.toUpperCase());
 console.log(uppercaseAbc); // [ 'A', 'B', 'C' ]
+
+export default {};

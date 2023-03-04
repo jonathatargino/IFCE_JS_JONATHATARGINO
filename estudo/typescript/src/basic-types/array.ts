@@ -14,3 +14,5 @@ function arrayToUpperCase(arr: string[]): string[] {
 console.log(multiplicaArgs(1, 2, 3, 4, 5));
 console.log(concatenaArgs("Neto", "Neto", "Neto", "neto"));
 console.log(arrayToUpperCase(["a", "b", "c"]));
+
+export default {};

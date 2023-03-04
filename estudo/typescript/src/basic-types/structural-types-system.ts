@@ -15,3 +15,5 @@ const sentUser = {
   outraChave: "outroValor",
 };
 console.log(verifyUser(myUser, sentUser)); // true
+
+export default {};
