@@ -1,6 +1,6 @@
 export class Empresa {
   public readonly nome: string; // Declaração das variáveis: visibilidade e tipo
-  private readonly colaboradores: Colaborador[] = [];
+  private readonly colaboradores: Colaborador[] = []; // privado
   protected readonly cnpj: string;
 
   constructor(nome: string, cnpj: string) {
@@ -26,3 +26,10 @@ const colaborador1 = new Colaborador("Jonatha", "Targino");
 
 empresa1.adicionaColaborador(colaborador1);
 console.log(empresa1);
+
+// Visibilidade:
+
+// public (padrão)  -> Acessível na classe, fora da classe e em todas as subclasses.
+console.log(empresa1.nome);
+// private -> Acessíval apenas dentro da classe. (encapsulamento)
+// console.log(empresa1.colaboradores) // Property 'colaboradores' is private and only accessible within class 'Empresa'
