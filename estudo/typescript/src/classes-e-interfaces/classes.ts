@@ -1,7 +1,7 @@
 export class Empresa {
   public readonly nome: string; // Declaração das variáveis: visibilidade e tipo
-  private readonly colaboradores: Colaborador[] = []; // privado
-  protected readonly cnpj: string;
+  protected readonly colaboradores: Colaborador[] = [];
+  private readonly cnpj: string; // privado
 
   constructor(nome: string, cnpj: string) {
     this.nome = nome; // No construtor, receberemos os argumentos passados na criação da instância
@@ -10,6 +10,17 @@ export class Empresa {
 
   adicionaColaborador(colaborador: Colaborador): void {
     this.colaboradores.push(colaborador);
+  }
+}
+
+export class Udemy extends Empresa {
+  constructor() {
+    super("Udemy", "11.111.111/001-11");
+  }
+
+  popColaborador(): Colaborador | undefined {
+    const colaborador = this.colaboradores.pop(); // Só é possível acessar colaboradores dentro de Udemy pois colaboradores é uma propriedade protegida, e não privada.
+    if (colaborador) return colaborador;
   }
 }
 
@@ -31,5 +42,6 @@ console.log(empresa1);
 
 // public (padrão)  -> Acessível na classe, fora da classe e em todas as subclasses.
 console.log(empresa1.nome);
-// private -> Acessíval apenas dentro da classe. (encapsulamento)
+// private -> Acessível apenas dentro da classe. (encapsulamento)
 // console.log(empresa1.colaboradores) // Property 'colaboradores' is private and only accessible within class 'Empresa'
+// protected -> Acessível dentro da classe e da subclasse.
