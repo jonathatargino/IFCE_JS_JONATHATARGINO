@@ -12,6 +12,7 @@ export class Escritor {
   }
 }
 
+// Inversão de dependência: A classe Escritor não aponta diretamente para uma classe concreta, mas sim para uma classe abstrata.
 export abstract class Ferramenta {
   constructor(private _nome: string) {}
   abstract escrever(): void;
