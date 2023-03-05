@@ -14,3 +14,28 @@ export class Pessoa implements TipoPessoa {
     return this.nome + " " + this.sobrenome;
   }
 }
+
+// Interfaces funcionam como type alias
+// A interface funciona como um modelo de objeto
+interface Usuario {
+  idade: number;
+  id: string;
+}
+
+// Podemos extender mais de uma interface.
+interface TipoNome {
+  nome: string;
+}
+interface TipoSobrenome {
+  sobrenome: string;
+}
+
+interface MeuUsuario extends Usuario, TipoNome, TipoSobrenome {}
+
+// Objeto criado através da interface -> O objeto deve conter apenas as chaves declaradas na interface.
+const user: MeuUsuario = {
+  nome: "Jonatha",
+  sobrenome: "Targino",
+  idade: 19,
+  id: "1001",
+};
