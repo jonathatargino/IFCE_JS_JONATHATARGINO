@@ -39,3 +39,12 @@ const user: MeuUsuario = {
   idade: 19,
   id: "1001",
 };
+
+// Declaration merging: a interface I vai ter nome e sobrenome
+interface I {
+  nome: string;
+}
+
+interface I {
+  sobrenome: string;
+}
