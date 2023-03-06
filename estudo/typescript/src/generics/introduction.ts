@@ -28,3 +28,30 @@ const arr2 = ["a", "b", "c", "d"];
 // function myFilter<string>(array: string[], callback: callbackfn<string>): string[]
 const newArr2 = myFilter(arr2, (val) => val.length <= 1);
 console.log(newArr2);
+
+// Arrays são generics por padrão
+const arrayNumeros: Array<number> = [1, 2, 3, 4];
+console.log(arrayNumeros);
+
+// function minhaPromise(): Promise<number>
+async function minhaPromise() {
+  return 1;
+}
+
+// function minhaPromise2(): Promise<unknown>
+// O TypeScript não sabe o valor pois ele não realizará a instrução assíncrona como o setTimeout pois isso poderia demandar muito tempo.
+function minhaPromise2() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(1);
+    }, 1000);
+  });
+}
+
+function minhaPromise3(): Promise<number> {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(1);
+    }, 1000);
+  });
+}
