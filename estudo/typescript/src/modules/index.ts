@@ -1,11 +1,5 @@
-// Para importar arquivos javascript em um arquivo typescript é preciso habilitar "allowJs" em tsconfig.json
-import { soma } from "./module";
+import _ from "./lodashModule";
 
-/*
-Problema -> As tipagens não estarão definidas
-function soma(x: any, y: any): any
-*/
-
-// const result: any
-const result = soma(10, 20);
+const arr = [1, 2, 3, 4, 5];
+const result = _.mul(arr);
 console.log(result);
