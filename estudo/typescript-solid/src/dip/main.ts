@@ -1,6 +1,11 @@
 /*
-  Interface segregation principle (Princípio da segragação de interface):
-  Os clientes não devem ser forçados de usar types, interfaces ou membros abstratos que não utilizam.
+  Módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações.
+
+  Dependa de abstrações, não de implementações. -> Interfaces e types também são abstrações (protocols).
+  Abstrações não devem depender de detalhes. Detalhes devem depender das abstrações.
+
+  Classes de baixo nível são classes que executam as tarefas (os detalhes)
+  Classes de alto nível são classes que gerenciam as classes de baixo nível (abstrações)
 */
 
 import { Messaging } from "./services/messaging";
@@ -20,9 +25,8 @@ const individualCostumer = new IndividualCostumer2(
   "Targino",
   "000.000.000-00",
 );
-const enterpriseCostumer = new EnterpriseCostumer2("LASIC", "000/0000-00");
 
-// Dependências de order -> Order depende de shoppingCart, então Order é de alto nível e shoppingCart é de baixo nível.
+const enterpriseCostumer = new EnterpriseCostumer2("LASIC", "000/0000-00");
 const order = new Order(
   shoppingCart,
   messaging,
