@@ -1,0 +1,18 @@
+Os princípios S.O.L.I.D são 5 princípios da programação para manter um código limpo, flexível e fácil de ser mantido.
+
+S -> Single responsability Principle (Princípio da responsabilidade única):
+Uma classe deve ter apenas um motivo para mudar.
+
+O -> Open/Closed principle (Princípio do aberto/fechado):
+Módulos, classes, objetos e operações devem estar aberto para extensão, mas fechado para modificações.
+
+L -> Liskov substitution principle (Princípio da substituição de Liskov):
+Se ϕ(x) é uma propriedade demonstrável dos objetos x de tipo T. Então, ϕ(y) deve ser verdadeira para objetos y de tipo S onde S é um subtipo de T
+Ou seja, subtipos precisam ser substituíveis por seus tipos de bases.
+
+I -> Interface segregation principle (Princípio da segragação de interface):
+Os clientes não devem ser forçados de usar interfaces que não utilizam.
+
+D -> Dependecy inversion principle (Princípio da inversão de dependência):
+Módulos de alto nível não devem ser dependentes dos módulos de baixo nível, ambos devem depender de abstrações. Detalhes devem depender das abstrações, não o inverso.
+
