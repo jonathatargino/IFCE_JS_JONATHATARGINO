@@ -1,8 +1,10 @@
 type CartItem = { name: string; price: number };
 type OrderStatus = "open" | "closed";
 
-export class ShoppingCart {
+export class ShoppingCartLegacy {
   private readonly _items: CartItem[] = [];
+
+  // Não é responsabilidade do carrinho de compras.
   private _orderStatus: OrderStatus = "open";
 
   addItem(item: CartItem): void {
@@ -17,6 +19,7 @@ export class ShoppingCart {
     return this._items;
   }
 
+  // Não é responsabilidade do carrinho de compras.
   get orderStatus(): Readonly<OrderStatus> {
     return this._orderStatus;
   }
@@ -27,6 +30,7 @@ export class ShoppingCart {
     );
   }
 
+  // Não é responsabilidade do carrinho de compras.
   checkout(): void {
     if (this.isEmpty()) {
       console.log("Seu carrinho está vazio");
@@ -43,10 +47,12 @@ export class ShoppingCart {
     return this._items.length === 0;
   }
 
+  // Não é responsabilidade do carrinho de compras.
   sendMessage(msg: string): void {
     console.log("Mensagem enviada: " + msg);
   }
 
+  // Não é responsabilidade do carrinho de compras.
   saveOrder(): void {
     console.log("Pedido salvo com sucesso");
   }
@@ -56,7 +62,7 @@ export class ShoppingCart {
   }
 }
 
-const shoppingCart = new ShoppingCart();
+const shoppingCart = new ShoppingCartLegacy();
 shoppingCart.addItem({ name: "Presunto", price: 12 });
 shoppingCart.addItem({ name: "Queijo", price: 18 });
 shoppingCart.addItem({ name: "Carne", price: 46 });
