@@ -1,26 +1,17 @@
-// Padrão STRATEGY GoF
 export abstract class Discount {
-  abstract calculate(value: number): number;
+  protected discount = 0;
+
+  calculate(value: number): number {
+    return value - value * this.discount;
+  }
 }
 
 export class FiftyPercentDiscount extends Discount {
-  private readonly discount = 0.5;
-
-  calculate(value: number): number {
-    return value - value * this.discount;
-  }
+  protected readonly discount = 0.5;
 }
 
 export class TenPercentDiscount extends Discount {
-  private readonly discount = 0.1;
-
-  calculate(value: number): number {
-    return value - value * this.discount;
-  }
+  protected readonly discount = 0.1;
 }
 
-export class NoDiscount extends Discount {
-  calculate(value: number): number {
-    return value;
-  }
-}
+export class NoDiscount extends Discount {}
